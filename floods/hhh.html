@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FloodSmart Route</title>
+
+    <link rel="stylesheet" href="sssj.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="topbar">
+
+    <div class="brand">
+        <div class="brand-icon">🌊</div>
+
+        <div>
+            <h1>FloodSmart</h1>
+            <span>AI-Powered Flood Aware Navigation</span>
+        </div>
+    </div>
+
+    <div class="system-status">
+        <span class="status-dot"></span>
+        System Online
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="badge">
+            🚨 REAL-TIME FLOOD AWARE ROUTING
+        </span>
+
+        <h2>
+            Don't Just Find a Route.<br>
+            <span>Find a Safer Route.</span>
+        </h2>
+
+        <p>
+            FloodSmart analyzes available routes and
+            identifies roads that may pass through
+            flood-risk zones.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SEARCH ================= -->
+
+<section class="search-section">
+
+    <div class="search-card">
+
+        <div class="location-input">
+
+            <label>📍 STARTING POINT</label>
+
+            <input
+                id="start"
+                type="text"
+                placeholder="Enter starting location"
+            >
+
+        </div>
+
+
+        <button
+            class="location-button"
+            onclick="useMyLocation()"
+            title="Use current location">
+
+            📍
+
+        </button>
+
+
+        <div class="location-input">
+
+            <label>🏁 DESTINATION</label>
+
+            <input
+                id="destination"
+                type="text"
+                placeholder="Enter destination"
+            >
+
+        </div>
+
+
+        <button
+            class="route-button"
+            onclick="findSafeRoutes()">
+
+            🛡️ Find Safe Route
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="main-container">
+
+
+    <!-- MAP -->
+
+    <section class="map-card">
+
+        <div id="map"></div>
+
+
+        <div class="map-overlay">
+
+            <h3>🌊 Flood Risk Zones</h3>
+
+            <div>
+                <span class="legend-dot green"></span>
+                Low Risk
+            </div>
+
+            <div>
+                <span class="legend-dot yellow"></span>
+                Moderate Risk
+            </div>
+
+            <div>
+                <span class="legend-dot red"></span>
+                High Risk
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DASHBOARD -->
+
+    <aside class="dashboard">
+
+
+        <!-- CURRENT STATUS -->
+
+        <div
+            id="status-card"
+            class="status-card">
+
+            <div class="status-icon">
+                🛡️
+            </div>
+
+            <div>
+
+                <span class="small-title">
+                    ROUTE SAFETY
+                </span>
+
+                <h3 id="risk-level">
+                    Waiting
+                </h3>
+
+                <p id="risk-message">
+                    Enter your journey details
+                    to analyze flood risk.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- STATS -->
+
+        <div class="stats-grid">
+
+
+            <div class="stat">
+
+                <span>🛣️ Distance</span>
+
+                <strong id="distance">
+                    --
+                </strong>
+
+            </div>
+
+
+            <div class="stat">
+
+                <span>⏱️ ETA</span>
+
+                <strong id="duration">
+                    --
+                </strong>
+
+            </div>
+
+
+            <div class="stat">
+
+                <span>🌊 Risk Score</span>
+
+                <strong id="risk-score">
+                    --
+                </strong>
+
+            </div>
+
+
+            <div class="stat">
+
+                <span>🛣️ Routes</span>
+
+                <strong id="route-count">
+                    --
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- RECOMMENDATION -->
+
+        <div
+            id="recommendation"
+            class="recommendation">
+
+            <div class="recommendation-icon">
+                💡
+            </div>
+
+            <div>
+
+                <h3>
+                    Safety Recommendation
+                </h3>
+
+                <p>
+                    Your safest route recommendation
+                    will appear here.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ROUTES -->
+
+        <div class="routes-section">
+
+            <h3>
+                Available Routes
+            </h3>
+
+            <div id="route-list">
+
+                <div class="empty-route">
+
+                    🔎 Enter locations to compare
+                    routes.
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </aside>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div>
+        🌊 <strong>FloodSmart</strong>
+    </div>
+
+    <div>
+        Hackathon Prototype • Flood-Aware Navigation
+    </div>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="csss.js"></script>
+
+
+<!-- Google Maps -->
+
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCkqHfmZifE-jIHvKMYEPmN1Fp8gFTOYo&libraries=places,geometry&callback=initMap"
+    async
+    defer>
+</script>
+
+</body>
+</html>
