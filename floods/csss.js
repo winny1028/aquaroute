@@ -2,8 +2,6 @@
    FLOODSMART ROUTE
    Hackathon Prototype
    ===================================================== */
-
-
 let map;
 
 let routeLines = [];
@@ -15,7 +13,6 @@ let userMarker = null;
 let safestRouteIndex = 0;
 
 let currentRoutes = [];
-
 
 /* =====================================================
    DEMO FLOOD DATA
@@ -86,13 +83,9 @@ const floodZones = [
     }
 
 ];
-
-
 /* =====================================================
    INITIALIZE GOOGLE MAP
    ===================================================== */
-
-
 async function initMap() {
 
     const {
@@ -159,8 +152,6 @@ function setupAutocomplete() {
 /* =====================================================
    DRAW FLOOD ZONES
    ===================================================== */
-
-
 function drawFloodZones() {
 
     floodZones.forEach(zone => {
@@ -719,8 +710,6 @@ function drawRoutes(analyzed) {
 /* =====================================================
    DASHBOARD
    ===================================================== */
-
-
 function showDashboard(analyzed) {
 
     const safest =
@@ -799,8 +788,6 @@ function showDashboard(analyzed) {
 /* =====================================================
    RISK CARD
    ===================================================== */
-
-
 function updateRiskCard(risk) {
 
     const level =
@@ -876,8 +863,6 @@ function updateRiskCard(risk) {
 /* =====================================================
    RECOMMENDATION
    ===================================================== */
-
-
 function updateRecommendation(risk) {
 
     const box =
@@ -975,8 +960,6 @@ function updateRecommendation(risk) {
 /* =====================================================
    ROUTE CARDS
    ===================================================== */
-
-
 function showRouteCards(analyzed) {
 
     const container =
@@ -1133,8 +1116,6 @@ function showRouteCards(analyzed) {
 /* =====================================================
    HIGHLIGHT SELECTED ROUTE
    ===================================================== */
-
-
 function highlightRoute(index) {
 
     routeLines.forEach(
@@ -1276,8 +1257,6 @@ function formatDuration(milliseconds) {
 /* =====================================================
    LOADING
    ===================================================== */
-
-
 function setLoading() {
 
     document.getElementById(
